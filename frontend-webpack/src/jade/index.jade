@@ -1,0 +1,9 @@
+include template/_mixins.jade
+extends template/_default.jade
+
+block append css
+  +ex_css('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext')
+block append hjs
+  +jsF('main.js')
+
+block contents
