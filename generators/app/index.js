@@ -12,7 +12,6 @@ class GeneratorZero extends yeoman.Base {
 
   prompting() {
     // Have Yeoman greet the user.
-    console.log(this);
     this.log(yosay(
       `Welcome to the super-duper ${chalk.red('generator-zero')} generator!`
     ));
