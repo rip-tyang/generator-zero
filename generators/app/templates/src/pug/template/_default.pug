@@ -1,0 +1,24 @@
+include _mixins
+
+- var meta_title = 'Your Title'
+- var img_favicon = 'favicon.png'
+
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(charset="utf-8")
+    meta(name='description' content='Thomas Yang')
+    meta(name='keywords' content='Keywords')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0')
+    meta(name='apple-mobile-web-app-capable' content='yes')
+
+    title= meta_title
+    link(href=img_favicon, rel='shortcut icon', type='image/vnd.microsoft.icon')
+    block css
+    block hjs
+
+  body
+    block contents
+    block js
+    block html_templates
