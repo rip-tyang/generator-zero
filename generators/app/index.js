@@ -5,13 +5,14 @@ const chalk = require('chalk');
 const yosay = require('yosay');
 const mkdirp = require('mkdirp');
 
-module.exports = yeoman.Base.extend({
-  initializing: () => {
+class GeneratorZero extends yeoman.Base {
+  initializing() {
     this.props = {};
-  },
+  }
 
-  prompting: () => {
+  prompting() {
     // Have Yeoman greet the user.
+    console.log(this);
     this.log(yosay(
       `Welcome to the super-duper ${chalk.red('generator-zero')} generator!`
     ));
@@ -22,10 +23,9 @@ module.exports = yeoman.Base.extend({
     }, this).then((props) => {
       this.props.name = props.name;
     });
-  },
+  }
 
-
-  default: () => {
+  default() {
     if (path.basename(this.destinationPath()) !== this.props.name) {
       this.log(
         `Your project must be inside a folder named ${this.props.name} \n` +
@@ -38,9 +38,11 @@ module.exports = yeoman.Base.extend({
       this.templatePath('**'),
       this.destinationPath()
     );
-  },
+  }
 
-  install: () => {
+  install() {
     this.installDependencies({ bower: false });
-  },
-});
+  }
+}
+
+module.exports = GeneratorZero;
