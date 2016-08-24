@@ -13,6 +13,7 @@
 
 ## Folder Structure and Name Convention
 
+```
 src
 ├── coffee
     ├── main.coffee
@@ -33,6 +34,7 @@ dist
 ├── favicon.png
 └── assets
     └── images
+```
 
 All coding should happen in `src` folder and all things will be compiled into `dist` folder.
 Files in `coffee` and `pug` folder will be compiled if they are not preceeded with an underscore.
