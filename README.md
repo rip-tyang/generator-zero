@@ -1,5 +1,41 @@
 # generator-zero [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> A simple frontend scaffold using coffeescript, pug, stylus, webpack
+
+> A simple frontend scaffold using coffeescript, pug, stylus, webpack, gulp
+
+## Features
+
+- pug -> html, coffeescript -> javascript, stylus -> css
+- use webpack to bundle npm dependencies
+- inline css into html
+- inline assets as data url
+- utilize webpack dev server, hot reload and auto refresh when anything changes
+- utilize proxy middleware, good for debugging with existing API
+
+## Folder Structure and Name Convention
+
+src
+├── coffee
+    ├── main.coffee
+    └── _dependency.coffee
+├── pug
+    ├── index.pug
+    └── _dependency.pug
+├── stylus
+    └── index.pug
+├── miscellaneous
+    ├── robots.txt
+    └── favicon.png
+└── assets
+    └── images
+dist
+├── index.html
+├── robots.txt
+├── favicon.png
+└── assets
+    └── images
+
+All coding should happen in `src` folder and all things will be compiled into `dist` folder.
+Files in `coffee` and `pug` folder will be compiled if they are not preceeded with an underscore.
 
 ## Installation
 
@@ -15,6 +51,11 @@ Then generate your new project:
 ```bash
 yo zero
 ```
+
+## Gulp Tasks
+
+- gulp serve: run the dev server on port 5000
+- gulp dist: compile all things into `dist` folder
 
 ## Getting To Know Yeoman
 
