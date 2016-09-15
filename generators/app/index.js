@@ -37,6 +37,10 @@ class GeneratorZero extends yeoman.Base {
       this.templatePath('**'),
       this.destinationPath()
     );
+    this.fs.copy(
+      this.templatePath('.*'),
+      this.destinationPath()
+    );
   }
 
   install() {
