@@ -1,11 +1,11 @@
 const path = require('path');
-const yeoman = require('yeoman-generator');
+const Generator = require('yeoman-generator');
 const askName = require('inquirer-npm-name');
 const chalk = require('chalk');
 const yosay = require('yosay');
 const mkdirp = require('mkdirp');
 
-class GeneratorZero extends yeoman.Base {
+class GeneratorZero extends Generator {
   initializing() {
     this.props = {};
   }
