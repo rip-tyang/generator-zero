@@ -27,9 +27,8 @@ class GeneratorZero extends Generator {
   default() {
     if (path.basename(this.destinationPath()) !== this.props.name) {
       this.log(
-        `Your project must be inside a folder named ${this.props.name} \n` +
-        'I\'ll automatically create this folder.'
-      );
+        `Your project must be inside a folder named ${this.props.name} 
+         I'll automatically create this folder.`);
       mkdirp(this.props.name);
       this.destinationRoot(this.destinationPath(this.props.name));
     }
