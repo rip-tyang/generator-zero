@@ -111,7 +111,7 @@ gulp.task 'dist:webpack', ->
     entry: entry
 
   gulp.src "#{paths.src}/coffee/main.js"
-    .pipe webpackStream(webpackConfig(option))
+    .pipe webpackStream(webpackConfig(option), webpack)
     .pipe gulp.dest(paths.dist)
 
 gulp.task 'dist:pug', ->
