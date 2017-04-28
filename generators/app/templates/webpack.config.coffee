@@ -3,23 +3,26 @@ path = require 'path'
 nib = require 'nib'
 stylus = require 'stylus'
 ManifestPlugin = require 'webpack-manifest-plugin'
-banner = 'Copyright 2015 Thomas Yang http://thomas-yang.me/'
+banner =
+  banner: 'Copyright 2015 Thomas Yang http://thomas-yang.me/'
+  entryOnly: true
 
 paths =
   src: path.join(__dirname, 'src')
   dest: path.join(__dirname, 'dist')
 
 debugPlugins = [
-  new webpack.LoaderOptionsPlugin({ debug: true })
   new webpack.HotModuleReplacementPlugin()
-  new webpack.BannerPlugin({ banner: banner })
+  new webpack.BannerPlugin(banner)
+  new webpack.LoaderOptionsPlugin({ debug: true })
 ]
 
 productionPlugins = [
   new ManifestPlugin()
   new webpack.BannerPlugin(banner)
   new webpack.optimize.UglifyJsPlugin({
-    sourceMap: false
+    warning: true
+    minimize: true
     compress: true
     mangle: true
   })
@@ -41,18 +44,18 @@ baseOption =
       {
         test: /\.styl$/
         use: [
-               'style-loader'
-               'css-loader'
-               {
-                 loader: 'stylus-loader'
-                 options:
-                   use: [nib()]
-                   define:
-                     'inline-url': stylus.url
-                       paths: [__dirname + '/src']
-                       limit: false
-               }
-             ]
+          'style-loader'
+          'css-loader'
+          {
+            loader: 'stylus-loader'
+            options:
+              use: [nib()]
+              define:
+                'inline-url': stylus.url
+                  paths: [__dirname + '/src']
+                  limit: false
+          }
+        ]
       }
       {
         test: /\.(eot|ttf|woff|otf|svg)$/
