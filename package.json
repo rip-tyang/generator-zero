@@ -1,6 +1,6 @@
 {
   "name": "generator-zero",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A simple frontend scaffold using coffeescript, pug, stylus, webpack",
   "homepage": "https://github.com/Hacker-YHJ/generator-zero",
   "author": {
