@@ -52,7 +52,6 @@
   },
   "repository": "Hacker-YHJ/generator-zero",
   "scripts": {
-    "prepublish": "gulp prepublish",
     "test": "gulp"
   },
   "license": "MIT"
